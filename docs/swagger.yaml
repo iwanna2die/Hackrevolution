@@ -1,0 +1,318 @@
+basePath: /
+definitions:
+  models.LogPwd:
+    properties:
+      login:
+        type: string
+      password:
+        type: string
+    type: object
+  utils.errorResponse:
+    properties:
+      message: {}
+      status:
+        type: integer
+    type: object
+host: 10.200.164.12:8080
+info:
+  contact: {}
+  description: This is a sample server celler server.
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /api/v1/adm/lentacours/{id}:
+    get:
+      consumes:
+      - application/json
+      description: getmyOtchet
+      operationId: Otchet
+      parameters:
+      - description: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: Get Otchet by id klass
+      tags:
+      - Otchet Getid
+  /api/v1/auth/login:
+    post:
+      consumes:
+      - application/json
+      description: login
+      operationId: login
+      parameters:
+      - description: 'Login: '
+        in: body
+        name: logpwd
+        required: true
+        schema:
+          $ref: '#/definitions/models.LogPwd'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: Login
+      tags:
+      - Auth.Login
+  /api/v1/auth/logout:
+    get:
+      consumes:
+      - application/json
+      description: logout
+      operationId: logout
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: logout
+      tags:
+      - Auth.Login
+  /api/v1/auth/refresh:
+    get:
+      consumes:
+      - application/json
+      description: Refresh
+      operationId: Refresh
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: Refresh
+      tags:
+      - Auth.Refresh
+  /api/v1/validate/getprofile:
+    get:
+      consumes:
+      - application/json
+      description: getmyprofile
+      operationId: getprofile
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: Get Profile
+      tags:
+      - Profile GetAll
+  /api/v1/validate/lenta:
+    get:
+      consumes:
+      - application/json
+      description: getmylenta
+      operationId: getmylenta
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: Get Lenta
+      tags:
+      - Lenta GetAll
+  /api/v1/validate/lentacours/{id}:
+    get:
+      consumes:
+      - application/json
+      description: getmyLenta
+      operationId: getmyLenta
+      parameters:
+      - description: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: Get Lenta by id klass
+      tags:
+      - Lenta Getid
+  /api/v1/validate/note/{id}:
+    get:
+      consumes:
+      - application/json
+      description: getmynote
+      operationId: getmynote
+      parameters:
+      - description: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: Get Note by id klass
+      tags:
+      - Note Getid
+  /test:
+    get:
+      consumes:
+      - application/json
+      description: TEST
+      operationId: TEST
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: TEST
+      tags:
+      - TEST
+swagger: "2.0"
